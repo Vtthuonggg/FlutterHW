@@ -6,7 +6,6 @@ void main(List<String> args) {
   String a2 = a1.substring(0, a1.length - 3);
   String a3 = a2.substring(a2.length - 20, a2.length - 9);
 
-  ///a1 = Capitalize(a1);
   a2 = a2
       .replaceFirst('đây', 'Đây')
       .replaceFirst(' của', "")

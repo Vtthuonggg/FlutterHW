@@ -20,5 +20,5 @@ void main(List<String> args) {
   // ví dụ
   String s1 =
       "${arr[3].toString().substring(0, 1).toUpperCase()}${arr[3].toString().substring(1, 3)}";
-  print('"$s1"'); // sẽ in ra "Đây" các ký tự sau tương tự như vậy.
+  print(s1);
 }

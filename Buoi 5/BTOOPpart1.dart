@@ -49,7 +49,7 @@ void assignRemainingStudents(Class lopHoc, int remaining) {
   for (int i = 0; i < remaining; i++) {
     String name;
     do {
-      name = String.fromCharCode(65 + random.nextInt(26));
+      name = String.fromCharCode(72 + random.nextInt(26));
     } while (lopHoc.students.any((student) => student.name == name) ||
         forbiddenNames.contains(name));
     lopHoc.students.add(Student(name));

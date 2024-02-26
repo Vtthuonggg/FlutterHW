@@ -4,78 +4,52 @@ class Member {
   DateTime birthDay;
   String phone;
   String email;
-  Gender genger;
-  List<Post> posts;
+  String genger;
 
-  Member({
-    required this.name,
-    required this.avatar,
-    required this.birthDay,
-    required this.email,
-    required this.genger,
-    required this.phone,
-    required this.posts,
-  });
-  void addPost(Post post) {
-    posts.add(post);
-  }
+  Member(this.avatar, this.birthDay, this.email, this.genger, this.name, this.phone);
 }
-
-enum Gender { male, female, other }
-
-class Post {
-  String content;
-  List<String> image;
+class Post{
   Member author;
-
+  String content;
+  List<String> images;
   List<Comment> comments;
 
-  Post({
-    required this.content,
-    required this.image,
-    required this.author,
-    required this.comments,
-  });
-  void addComment(Comment comment) {
-    comments.add(comment);
-  }
+  Post(this.author, this.content, {this.images = const[], this.comments = const[]});
 }
 
-class Comment {
+class Comment{
   String content;
-  Member author;
-  Comment({required this.content, required this.author});
+  Member commenter;
+
+  Comment(this.content, this.commenter);
 }
 
 void main() {
-  Member member1 = Member(
-      name: "Nguyen Van A",
-      avatar: "deptrai.jpg",
-      birthDay: DateTime(2003, 5, 12),
-      email: 'nguyena@gmail.com',
-      genger: Gender.male,
-      phone: "087661273",
-      posts: []);
+  Member member1 = Member('avatar.jpg', DateTime(2000,4,30), 'abscn@gmail.com', "Female", "Nguyen Thi A", '0982347');
+  Member member2 = Member('aksjd.jpg', DateTime(2001,7,30), "skdfnsjkd@icloud.com", "Male", "Nguyen Van B", "02198346");
 
-  Member member2 = Member(
-      name: "sndfjk",
-      avatar: "jsjbdj",
-      birthDay: DateTime(2000, 4, 12),
-      email: "shada@gmail.com",
-      genger: Gender.male,
-      phone: "09812774",
-      posts: []);
+var post1 = Post(member1, "Đào thải nhân sự", comments: []);
+var post2 = Post(member2, "Bữa trưa hôm nay có gì", comments: []);
 
-  Post post1 = Post(
-      content: "Đào thải nhân sự",
-      image: ["image1.jpg", "image2.jpg"],
-      author: member1,
-      comments: []);
+var comment1 = Comment("Tuyệt quá!", member2);
+var comment2 = Comment("Tôi thích cá rán", member1);
 
-  member1.addPost(post1);
+post1.comments.add(comment1);
+post2.comments.add(comment2);
 
-  Comment comment1 = Comment(content: "Nhảy việc thôi", author: member2);
-  post1.addComment(comment1);
-  print(post1.content);
-  print(post1.author);
+print('Post 1:');
+print('Tác giả: ${post1.author.name}');
+print('Chủ đề: ${post1.content }');
+print('Bình luận:');
+print('- ${comment1.commenter.name}: ${comment1.content}');
+
+print('------------------------------------- ');
+
+print('Post 2:');
+print('Tác giả: ${post2.author.name}');
+print('Chủ đề: ${post2.content }');
+print('Bình luận:');
+print('- ${comment2.commenter.name}: ${comment2.content}');
+
+
 }

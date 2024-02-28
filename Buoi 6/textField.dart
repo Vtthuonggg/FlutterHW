@@ -1,19 +1,17 @@
 textField(
-  String text,{
-     Function(String)? onChanged,
-}){
-  if (onChanged !=null) {
+  String text, {
+  Function(String)? onChanged,
+}) {
+  if (onChanged != null) {
     final result = 'Hello $text';
     onChanged(result);
   }
 }
-void main(){
-  textField(
-    'World',
-    onChanged: (result){
-      print("Received result in main: $result");
-    }
-  );
+
+void main() {
+  textField('World', onChanged: (result) {
+    print("Received result in main: $result");
+  });
 }
 
 // Người dùng nhập dữ liệu từ bàn phím ("World")

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -30,7 +32,7 @@ class MyHomePage extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset("assets/bookcook.png"),
+          Image.asset("assets/cumeo.png"),
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -105,7 +107,7 @@ class MyHomePage extends StatelessWidget {
                         Icons.share,
                         color: Colors.purple,
                       ),
-                      onPressed: null,
+                      onPressed: (null),
                     ),
                     Text(
                       'SHARE',

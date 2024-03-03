@@ -14,11 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Flexible(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Column(
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Flexible(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -241,16 +241,18 @@ class MyApp extends StatelessWidget {
                   ),
                 ],
               ),
-              const Column(
+            ),
+            Flexible(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(
                       image: NetworkImage(
-                          "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg")),
+                          'https://i.pinimg.com/originals/b0/b7/c8/b0b7c83a0fc3bc2c8985439569cab943.png')),
                 ],
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

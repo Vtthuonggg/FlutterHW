@@ -1,4 +1,8 @@
+import 'dart:math';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const MyWidget());
@@ -34,7 +38,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: const Text("Homework"),
@@ -42,44 +45,61 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                "assets/cumeo.png",
-              ),
-            ],
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Image.asset(
+                  "assets/cumeo.png",
+                ),
+                const SizedBox(height: 20),
+                const Row(
+                  children: [
+                    Expanded(
+                      child: LikeButotn(),
+                    ),
+                    Expanded(
+                        child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                            onPressed: null,
+                            icon: Icon(Icons.comment_outlined)),
+                        Text("Bình luận"),
+                      ],
+                    )),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                              onPressed: null,
+                              icon: Icon(Icons.ios_share_outlined)),
+                          Text("Chia sẻ"),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
           const SizedBox(
             height: 30,
           ),
-          const Row(
-            children: [
-              Expanded(
-                child: LikeButotn(),
-              ),
-              Expanded(
-                  child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                      onPressed: null, icon: Icon(Icons.comment_outlined)),
-                  Text("Bình luận"),
-                ],
-              )),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                        onPressed: null, icon: Icon(Icons.ios_share_outlined)),
-                    Text("Chia sẻ"),
-                  ],
-                ),
-              )
-            ],
+          Container(
+            margin: const EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text("currentCounter is: "),
+                Text(
+                  '$_counter',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
           ),
-          Text("currentCounter is: $_counter"),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -115,18 +135,24 @@ class _LikeButotnState extends State<LikeButotn> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        IconButton(
-          icon: Icon(
-            _liked ? Icons.favorite : Icons.favorite_border,
-            color: _liked ? Colors.red : null,
-          ),
-          onPressed: () {
-            setState(() {
-              _liked = !_liked;
-            });
-          },
+        Row(
+          children: [
+            IconButton(
+              icon: Icon(
+                _liked ? Icons.favorite : Icons.favorite_border_outlined,
+                color: _liked ? Colors.red : null,
+              ),
+              onPressed: () {
+                setState(() {
+                  _liked = !_liked;
+                });
+              },
+            ),
+          ],
         ),
-        Text(_liked ? 'Đã thích' : 'Thích')
+        Text(
+          _liked ? 'Đã thích' : 'Thích',
+        )
       ],
     );
   }

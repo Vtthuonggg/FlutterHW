@@ -132,28 +132,36 @@ class _LikeButotnState extends State<LikeButotn> {
   bool _liked = false;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Row(
-          children: [
-            IconButton(
-              icon: Icon(
-                _liked ? Icons.favorite : Icons.favorite_border_outlined,
-                color: _liked ? Colors.red : null,
+    return InkWell(
+      onTap: _toggleLike,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            children: [
+              IconButton(
+                icon: Icon(
+                  _liked ? Icons.favorite : Icons.favorite_border_outlined,
+                  color: _liked ? Colors.red : null,
+                ),
+                onPressed: _toggleLike,
               ),
-              onPressed: () {
-                setState(() {
-                  _liked = !_liked;
-                });
-              },
+            ],
+          ),
+          Text(
+            _liked ? 'Đã thích' : 'Thích',
+            style: TextStyle(
+              color: _liked ? Colors.red : null,
             ),
-          ],
-        ),
-        Text(
-          _liked ? 'Đã thích' : 'Thích',
-        )
-      ],
+          )
+        ],
+      ),
     );
+  }
+
+  void _toggleLike() {
+    setState(() {
+      _liked = !_liked;
+    });
   }
 }

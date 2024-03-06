@@ -32,7 +32,7 @@ class MyHomePage extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset("assets/cumeo.png"),
+          Image.asset("assets/bookcook.png"),
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

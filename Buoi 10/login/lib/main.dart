@@ -68,6 +68,7 @@ class _MyHomeState extends State<MyHome> {
           TextField(
             controller: _passwordController,
             decoration: const InputDecoration(hintText: "Enter your password"),
+            obscureText: true,
           ),
           const SizedBox(
             height: 20,
@@ -82,26 +83,26 @@ class _MyHomeState extends State<MyHome> {
                 });
               },
               label: const Text("Đăng nhập"),
-              icon: const Icon(Icons.login),
+              backgroundColor: Colors.blue,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0)),
             ),
           ),
           const SizedBox(
             height: 20,
           ),
           _username != null && _password != null
-              ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Thông tin đăng nhập:",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
+              ? Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Tên đăng nhập và mật khẩu là:",
                       ),
-                    ),
-                    Text("Username: $_username"),
-                    Text("Password: $_password"),
-                  ],
+                      Text("Username: $_username"),
+                      Text("Password: $_password"),
+                    ],
+                  ),
                 )
               : Container(),
         ],

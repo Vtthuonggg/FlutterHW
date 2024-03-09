@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const Messenger());
@@ -24,7 +22,7 @@ class Messenger2 extends StatelessWidget {
   const Messenger2({super.key});
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+    // final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -35,7 +33,7 @@ class Messenger2 extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
         centerTitle: true,
-        toolbarHeight: height / 8,
+        toolbarHeight: height / 10,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,40 +55,43 @@ class Messenger2 extends StatelessWidget {
                 SizedBox(width: 10),
                 CircleAvatar(
                   backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 40,
+                  radius: 35,
                 ),
                 SizedBox(width: 10), // Khoảng cách giữa các avatar
                 CircleAvatar(
                   backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 40,
-                ),
-                SizedBox(width: 10), // Khoảng cách giữa các avatar
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 40,
-                ),
-                SizedBox(width: 10), // Khoảng cách giữa các avatar
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 40,
+                  radius: 35,
                 ),
                 SizedBox(width: 10),
                 CircleAvatar(
                   backgroundImage: AssetImage('assets/ngoctrinh.png'),
+                  radius: 35,
                 ),
-                SizedBox(width: 10), // Khoảng cách giữa các avatar
+                SizedBox(width: 10),
                 CircleAvatar(
                   backgroundImage: AssetImage('assets/ngoctrinh.png'),
+                  radius: 35,
                 ),
-                SizedBox(width: 10), // Khoảng cách giữa các avatar
+                SizedBox(width: 10),
                 CircleAvatar(
                   backgroundImage: AssetImage('assets/ngoctrinh.png'),
+                  radius: 35,
                 ),
-                SizedBox(width: 10), // Khoảng cách giữa các avatar
+                SizedBox(width: 10),
                 CircleAvatar(
                   backgroundImage: AssetImage('assets/ngoctrinh.png'),
+                  radius: 35,
                 ),
-                // Thêm các CircleAvatar khác nếu cần
+                SizedBox(width: 10),
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
+                  radius: 35,
+                ),
+                SizedBox(width: 10),
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
+                  radius: 35,
+                ),
               ],
             ),
           ),
@@ -218,9 +219,7 @@ class Messenger2 extends StatelessWidget {
       bottomNavigationBar:
           BottomNavigationBar(items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Chat"),
-        BottomNavigationBarItem(icon: Icon(Icons.people), label: "People"),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle), label: "Profile"),
+        BottomNavigationBarItem(icon: Icon(Icons.camera), label: "Story"),
       ]),
     );
   }

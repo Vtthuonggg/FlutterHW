@@ -48,7 +48,7 @@ class _BodyState extends State<Body> {
         action: SnackBarAction(
           label: 'X',
           onPressed: () {},
-          textColor: Colors.white, // Màu văn bản của hành động
+          textColor: Colors.white,
         ),
       ));
     }
@@ -249,16 +249,34 @@ class _BodyState extends State<Body> {
               const SizedBox(
                 height: 10,
               ),
-              Center(
-                child: Container(
-                  width: 375,
-                  height: 156,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/Vector 2.png'),
-                        fit: BoxFit.fill),
+              Stack(
+                children: [
+                  Center(
+                    child: Container(
+                      width: 375,
+                      height: 156,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/Vector 2.png'),
+                            fit: BoxFit.fill),
+                      ),
+                    ),
                   ),
-                ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 22, top: 30),
+                    child: Container(
+                      width: 239,
+                      height: 84,
+                      child: Text(
+                        "  Your Mobile\n       Your Bank",
+                        style: GoogleFonts.salsa(
+                          color: Colors.white,
+                          fontSize: 32,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ],
           ),

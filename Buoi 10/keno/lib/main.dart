@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -37,18 +38,14 @@ class MyApp extends StatelessWidget {
                       border: Border(bottom: BorderSide(color: Colors.grey))),
                   child: Stack(children: [
                     Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Expanded(child: Text(keno.text)),
-                        Spacer(),
-                        Stack(
-                          children: [
-                            Container(
-                              color: Colors.red,
-                              width: keno.count * width / 10,
-                              height: 4.0,
-                            ),
-                          ],
+                        // const Spacer(),
+                        Container(
+                          color: Colors.red,
+                          width: keno.count * width / 10,
+                          height: 4.0,
                         ),
                         Expanded(child: Text("${keno.count}")),
                       ],

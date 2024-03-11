@@ -58,7 +58,23 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/ngoctrinh.png
+    - assets/icon1.png
+    - assets/icon2.png
+    - assets/icon3.png
+    - assets/icon4.png
+    - assets/icon5.png
+    - assets/icon6.png
+    - assets/icon7.png
+    - assets/icon8.png
+    - assets/icon9.png
+    - assets/icon10.png
+    - assets/icon11.png
+    - assets/icon12.png
+    - assets/icon13.png
+    - assets/icon14.png
+    - assets/icon15.png
+    - assets/icon16.png
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

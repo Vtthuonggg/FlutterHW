@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'Messenger.dart';
+import 'messenger.dart';
 
 void main() {
   runApp(const MyApp());
@@ -111,7 +110,7 @@ class _MyHomeState extends State<MyHome> {
                   onPressed: () {
                     setState(() {
                       _showError = false;
-                      if (_username == 'thuong' && _password == "12345") {
+                      if (_username == 'quang' && _password == "quangdeptrai") {
                         Navigator.push(
                             context,
                             MaterialPageRoute(

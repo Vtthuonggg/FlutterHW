@@ -13,18 +13,51 @@ class Messenger extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: title,
-      home: Messenger2(),
+      home: Messnger2(),
     );
   }
 }
 
-class Messenger2 extends StatelessWidget {
-  const Messenger2({super.key});
+class Messnger2 extends StatefulWidget {
+  const Messnger2({super.key});
+
+  @override
+  State<Messnger2> createState() => _Messnger2State();
+}
+
+class _Messnger2State extends State<Messnger2> {
   @override
   Widget build(BuildContext context) {
-    // final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-
+    final List<String> image = [
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+      'assets/ngoctrinh.png',
+    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -48,172 +81,32 @@ class Messenger2 extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 100, // Điều chỉnh chiều cao của danh sách ngang tại đây
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: const <Widget>[
-                SizedBox(width: 10),
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 35,
-                ),
-                SizedBox(width: 10), // Khoảng cách giữa các avatar
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 35,
-                ),
-                SizedBox(width: 10),
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 35,
-                ),
-                SizedBox(width: 10),
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 35,
-                ),
-                SizedBox(width: 10),
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 35,
-                ),
-                SizedBox(width: 10),
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 35,
-                ),
-                SizedBox(width: 10),
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 35,
-                ),
-                SizedBox(width: 10),
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  radius: 35,
-                ),
-              ],
-            ),
-          ),
+              height: 80,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: image.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage(image[index]),
+                        radius: 35,
+                      ),
+                    );
+                  })),
           Expanded(
-            child: ListView(
-              children: const <Widget>[
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                    radius: 20,
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage('assets/ngoctrinh.png'),
-                  ),
-                  title: Text("Ngọc Trinh"),
-                  subtitle: Text("Nhớ anh quá"),
-                ),
-              ],
-            ),
-          ),
+              child: ListView.builder(
+                  itemCount: image.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: AssetImage(image[index]),
+                        radius: 35,
+                      ),
+                      title: const Text("Ngọc trinh"),
+                      subtitle: const Text("Nhớ anh quá"),
+                    );
+                  })),
         ],
       ),
       bottomNavigationBar:

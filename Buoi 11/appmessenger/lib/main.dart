@@ -65,89 +65,102 @@ class _MyHomeState extends State<MyHome> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            "User name",
-            style: TextStyle(color: Colors.blue),
-          ),
-          TextField(
-            controller: _usernameController,
-            decoration: const InputDecoration(hintText: "Enter your user name"),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Text(
-            "Password",
-            style: TextStyle(color: Colors.blue),
-          ),
-          TextField(
-            controller: _passwordController,
-            decoration: const InputDecoration(hintText: "Enter your password"),
-            obscureText: true,
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+    return SingleChildScrollView(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          minHeight: MediaQuery.of(context).size.height -
+              MediaQuery.of(context).padding.top -
+              MediaQuery.of(context).padding.bottom,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (_showError)
-                const Padding(
-                  padding: EdgeInsets.only(bottom: 8),
-                  child: Text(
-                    "*Tài khoản hoặc mật khẩu không đúng",
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ),
-              SizedBox(
-                width: double.infinity,
-                child: FloatingActionButton.extended(
-                  onPressed: () {
-                    setState(() {
-                      _showError = false;
-                      if (_username == 'quang' && _password == "quangdeptrai") {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Messenger()));
-                      } else {
-                        _showError = true;
-                      }
-                    });
-                  },
-                  label: const Text("Đăng nhập"),
-                  backgroundColor: Colors.blue,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0)),
-                ),
+              const Text(
+                "User name",
+                style: TextStyle(color: Colors.blue),
               ),
-            ],
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          _username != null && _password != null
-              ? Expanded(
-                  child: Center(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Text(
-                          "Tên đăng nhập và mật khẩu là:",
-                        ),
-                        Text("Username: $_username"),
-                        Text("Password: $_password"),
-                      ],
+              TextField(
+                controller: _usernameController,
+                decoration:
+                    const InputDecoration(hintText: "Enter your user name"),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text(
+                "Password",
+                style: TextStyle(color: Colors.blue),
+              ),
+              TextField(
+                controller: _passwordController,
+                decoration:
+                    const InputDecoration(hintText: "Enter your password"),
+                obscureText: true,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  if (_showError)
+                    const Padding(
+                      padding: EdgeInsets.only(bottom: 8),
+                      child: Text(
+                        "*Tài khoản hoặc mật khẩu không đúng",
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: FloatingActionButton.extended(
+                      onPressed: () {
+                        setState(() {
+                          _showError = false;
+                          if (_username == 'quang' &&
+                              _password == "quangdeptrai") {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Messenger()));
+                          } else {
+                            _showError = true;
+                          }
+                        });
+                      },
+                      label: const Text("Đăng nhập"),
+                      backgroundColor: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0)),
                     ),
                   ),
-                )
-              : Container(),
-        ],
+                ],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              _username != null && _password != null
+                  ? SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      child: Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Text(
+                              "Tên đăng nhập và mật khẩu là:",
+                            ),
+                            Text("Username: $_username"),
+                            Text("Password: $_password"),
+                          ],
+                        ),
+                      ),
+                    )
+                  : Container(),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -31,7 +31,7 @@ class _BodyState extends State<Body> {
   void _login() {
     String username = _usernameController.text;
     String password = _passwordController.text;
-    if (username == "thuong" && password == "12345") {
+    if (username == "toannm" && password == "123456") {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text("Đăng nhập thành công"),
         duration: Duration(seconds: 2),
@@ -71,7 +71,7 @@ class _BodyState extends State<Body> {
           width: 358,
           height: 790,
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 251, 246, 240),
+            color: const Color.fromARGB(255, 251, 246, 240),
             borderRadius: BorderRadius.circular(15),
           ),
           child: Column(
@@ -263,8 +263,8 @@ class _BodyState extends State<Body> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 22, top: 30),
-                    child: Container(
+                    padding: const EdgeInsets.only(left: 22, top: 30),
+                    child: SizedBox(
                       width: 239,
                       height: 84,
                       child: Text(

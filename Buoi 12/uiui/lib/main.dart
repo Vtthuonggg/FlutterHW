@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'Theme.dart';
 import "ThemeNotifier.dart";
@@ -100,16 +101,31 @@ class HomePage extends StatelessWidget {
                     )
                   ],
                 ),
-                Container(
-                  width: width,
-                  height: height / 4,
-                  decoration: const BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                    Color.fromARGB(156, 156, 185, 221),
-                    Color.fromARGB(255, 255, 255, 255),
-                  ], begin: Alignment.centerRight, end: Alignment.centerLeft)),
-                  child: Image.asset('assets/image 4.png'),
-                ),
+                Stack(children: [
+                  Container(
+                    alignment: Alignment.center,
+                    width: width,
+                    height: height / 4,
+                    decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [
+                          Color.fromARGB(156, 156, 185, 221),
+                          Color.fromARGB(255, 255, 255, 255),
+                        ],
+                            begin: Alignment.centerRight,
+                            end: Alignment.centerLeft)),
+                    child: Image.asset('assets/image 4.png'),
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        "Todays Deal",
+                        style: GoogleFonts.hind(
+                            fontSize: 18, fontWeight: FontWeight.w700),
+                      )
+                    ],
+                  ),
+                ]),
               ],
             ),
           ]),

@@ -1,37 +1,38 @@
-import 'dart:html';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'Theme.dart';
 import "ThemeNotifier.dart";
 import 'package:provider/provider.dart';
-import 'package:flutter/cupertino.dart';
+import 'dart:ui';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class Refresh extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
   const Refresh({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    return ThemeWrapper(child: HomePage());
+    return const ThemeWrapper(child: HomePage());
   }
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return ThemeWrapper(
+    return const ThemeWrapper(
       child: HomePage(),
     );
   }
 }
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   Future<void> _refreshData() async {}
 
   @override
@@ -141,7 +142,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ]),
                   Padding(
-                    padding: EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(top: 10),
                     child: Row(
                       children: [
                         Container(
@@ -156,11 +157,9 @@ class HomePage extends StatelessWidget {
                           ),
                           width: width / 2,
                           height: height / 20,
-                          child: Text("Top Rate Freelances"),
+                          child: const Text("Top Rate Freelances"),
                         ),
-                        Container(
-                          child: Text("View All"),
-                        )
+                        const Text("View All")
                       ],
                     ),
                   ),

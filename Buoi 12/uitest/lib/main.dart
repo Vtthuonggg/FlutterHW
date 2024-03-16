@@ -5,7 +5,7 @@ import "ThemeNotifier.dart";
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class Refresh extends StatelessWidget {
@@ -40,6 +40,21 @@ class HomePage extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final themeNotifier = Provider.of<ThemeNotifier>(context);
 
+    final List<String> avaterImage = [
+      'assets/image9.png',
+      'assets/image10.png',
+      'assets/image11.png',
+      'assets/image12.png',
+      'assets/image12.png',
+      'assets/image12.png',
+      'assets/image12.png',
+      'assets/image12.png',
+    ];
+    final List<String> avaterImage2 = [
+      'assets/image13-1.png',
+      'assets/image13-2.png',
+      'assets/image13-3.png',
+    ];
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -189,301 +204,91 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 12, top: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Stack(
-                          children: [
-                            SizedBox(
-                              width: width / 5,
-                              height: height / 6,
-                            ),
-                            CircleAvatar(
-                              radius: height / 20,
-                              child: ClipOval(
-                                child: Image.asset(
-                                  "assets/image9.png",
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Container(
+                        width: width,
+                        height: height / 6,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: avaterImage.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Stack(children: [
+                                SizedBox(
+                                  width: width / 5,
+                                  height: height / 6,
                                 ),
-                              ),
-                            ),
-                            Positioned(
-                                bottom: -5,
-                                child: Container(
-                                  decoration:
-                                      const BoxDecoration(color: Colors.white),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        const Text(
-                                          "Wade Warren",
-                                          style: TextStyle(fontSize: 13),
-                                        ),
-                                        const Text(
-                                          "Beautician",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 5),
-                                          child: Container(
-                                            width: width / 7,
-                                            height: height / 30,
-                                            decoration: BoxDecoration(
-                                                color: const Color.fromARGB(
-                                                    20, 130, 123, 235),
-                                                borderRadius:
-                                                    BorderRadius.circular(40)),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Image.asset(
-                                                  'assets/logo7.png',
-                                                  scale: width / 150,
-                                                ),
-                                                const Text(
-                                                  " 4.9",
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.w600),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        )
-                                      ],
+                                CircleAvatar(
+                                  radius: height / 20,
+                                  child: ClipOval(
+                                    child: Image.asset(
+                                      avaterImage[index],
                                     ),
                                   ),
-                                ))
-                          ],
-                        ),
-                        Stack(
-                          children: [
-                            SizedBox(
-                              width: width / 5,
-                              height: height / 6,
-                            ),
-                            CircleAvatar(
-                              radius: height / 20,
-                              child: ClipOval(
-                                child: Image.asset(
-                                  "assets/image10.png",
                                 ),
-                              ),
-                            ),
-                            Positioned(
-                                bottom: -5,
-                                child: Container(
-                                  decoration:
-                                      const BoxDecoration(color: Colors.white),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        const Text(
-                                          "Wade Warren",
-                                          style: TextStyle(fontSize: 13),
-                                        ),
-                                        const Text(
-                                          "Beautician",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 5),
-                                          child: Container(
-                                            width: width / 7,
-                                            height: height / 30,
-                                            decoration: BoxDecoration(
-                                                color: const Color.fromARGB(
-                                                    20, 130, 123, 235),
-                                                borderRadius:
-                                                    BorderRadius.circular(40)),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Image.asset(
-                                                  'assets/logo7.png',
-                                                  scale: width / 150,
-                                                ),
-                                                const Text(
-                                                  " 4.9",
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.w600),
-                                                )
-                                              ],
+                                Positioned(
+                                    bottom: -5,
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                          color: Colors.white),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            const Text(
+                                              "Wade Warren",
+                                              style: TextStyle(fontSize: 13),
                                             ),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ))
-                          ],
-                        ),
-                        Stack(
-                          children: [
-                            SizedBox(
-                              width: width / 5,
-                              height: height / 6,
-                            ),
-                            CircleAvatar(
-                              radius: height / 20,
-                              child: ClipOval(
-                                child: Image.asset(
-                                  "assets/image11.png",
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                                bottom: -5,
-                                child: Container(
-                                  decoration:
-                                      const BoxDecoration(color: Colors.white),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        const Text(
-                                          "Wade Warren",
-                                          style: TextStyle(fontSize: 13),
-                                        ),
-                                        const Text(
-                                          "Beautician",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 5),
-                                          child: Container(
-                                            width: width / 7,
-                                            height: height / 30,
-                                            decoration: BoxDecoration(
-                                                color: const Color.fromARGB(
-                                                    20, 130, 123, 235),
-                                                borderRadius:
-                                                    BorderRadius.circular(40)),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Image.asset(
-                                                  'assets/logo7.png',
-                                                  scale: width / 150,
-                                                ),
-                                                const Text(
-                                                  " 4.9",
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.w600),
-                                                )
-                                              ],
+                                            const Text(
+                                              "Beautician",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w600),
                                             ),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ))
-                          ],
-                        ),
-                        Stack(
-                          children: [
-                            SizedBox(
-                              width: width / 5,
-                              height: height / 6,
-                            ),
-                            CircleAvatar(
-                              radius: height / 20,
-                              child: ClipOval(
-                                child: Image.asset(
-                                  "assets/image12.png",
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                                bottom: -5,
-                                child: Container(
-                                  decoration:
-                                      const BoxDecoration(color: Colors.white),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        const Text(
-                                          "Wade Warren",
-                                          style: TextStyle(fontSize: 13),
-                                        ),
-                                        const Text(
-                                          "Beautician",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 5),
-                                          child: Container(
-                                            width: width / 7,
-                                            height: height / 30,
-                                            decoration: BoxDecoration(
-                                                color: const Color.fromARGB(
-                                                    20, 130, 123, 235),
-                                                borderRadius:
-                                                    BorderRadius.circular(40)),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Image.asset(
-                                                  'assets/logo7.png',
-                                                  scale: width / 150,
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.only(top: 5),
+                                              child: Container(
+                                                width: width / 7,
+                                                height: height / 30,
+                                                decoration: BoxDecoration(
+                                                    color: const Color.fromARGB(
+                                                        20, 130, 123, 235),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            40)),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Image.asset(
+                                                      'assets/logo7.png',
+                                                      scale: width / 150,
+                                                    ),
+                                                    const Text(
+                                                      " 4.9",
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    )
+                                                  ],
                                                 ),
-                                                const Text(
-                                                  " 4.9",
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.w600),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ))
-                          ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ))
+                              ]),
+                            );
+                          },
                         ),
-                      ],
-                    ),
-                  ),
+                      )),
                   Padding(
                     padding: const EdgeInsets.only(top: 30),
                     child: Container(
@@ -529,6 +334,13 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: width,
+                    height: height * 2 / 3,
+                  )
                 ],
               ),
             ),

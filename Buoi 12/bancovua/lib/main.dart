@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
             width: width,
             height: height,
             decoration: const BoxDecoration(color: Colors.blueGrey),
-            child: Center(child: _chess(width))),
+            child: _chess(width)),
       ),
     );
   }

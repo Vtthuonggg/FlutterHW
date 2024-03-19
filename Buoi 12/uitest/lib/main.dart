@@ -5,13 +5,17 @@ import "ThemeNotifier.dart";
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-class Refresh extends StatelessWidget {
-  // ignore: use_key_in_widget_constructors
+class Refresh extends StatefulWidget {
   const Refresh({Key? key});
 
+  @override
+  State<Refresh> createState() => _RefreshState();
+}
+
+class _RefreshState extends State<Refresh> {
   @override
   Widget build(BuildContext context) {
     return const ThemeWrapper(child: HomePage());
@@ -87,12 +91,12 @@ class HomePage extends StatelessWidget {
               preferredSize: const Size.fromHeight(50.0),
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 15, left: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Expanded(
-                      child: SizedBox(
-                        height: height / 15,
+                child: Container(
+                  height: height / 16,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
                         child: TextField(
                           decoration: InputDecoration(
                               hintText: "Search here",
@@ -105,22 +109,22 @@ class HomePage extends StatelessWidget {
                               )),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
-                      child: Container(
-                        width: height / 15,
-                        height: height / 15,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
-                            border: Border.all(color: Colors.grey)),
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Image.asset('assets/logo6.png'),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: Container(
+                          width: height / 16,
+                          height: height / 16,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(14),
+                              border: Border.all(color: Colors.grey)),
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: Image.asset('assets/logo6.png'),
+                          ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -205,86 +209,91 @@ class HomePage extends StatelessWidget {
                   ),
                   Padding(
                       padding: const EdgeInsets.only(top: 10),
-                      child: Container(
+                      child: SizedBox(
                         width: width,
-                        height: height / 6,
+                        height: height / 5,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: avaterImage.length,
                           itemBuilder: (context, index) {
                             return Padding(
                               padding: const EdgeInsets.only(left: 10),
-                              child: Stack(children: [
-                                SizedBox(
-                                  width: width / 5,
-                                  height: height / 6,
-                                ),
-                                CircleAvatar(
-                                  radius: height / 20,
-                                  child: ClipOval(
-                                    child: Image.asset(
-                                      avaterImage[index],
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                    bottom: -5,
-                                    child: Container(
-                                      decoration: const BoxDecoration(
-                                          color: Colors.white),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius:
-                                                BorderRadius.circular(10)),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            const Text(
-                                              "Wade Warren",
-                                              style: TextStyle(fontSize: 13),
-                                            ),
-                                            const Text(
-                                              "Beautician",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w600),
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.only(top: 5),
-                                              child: Container(
-                                                width: width / 7,
-                                                height: height / 30,
-                                                decoration: BoxDecoration(
-                                                    color: const Color.fromARGB(
-                                                        20, 130, 123, 235),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            40)),
-                                                child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Image.asset(
-                                                      'assets/logo7.png',
-                                                      scale: width / 150,
-                                                    ),
-                                                    const Text(
-                                                      " 4.9",
-                                                      style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.w600),
-                                                    )
-                                                  ],
-                                                ),
-                                              ),
-                                            )
-                                          ],
+                              child: SizedBox(
+                                width: width / 5,
+                                height: height / 6,
+                                child: Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      CircleAvatar(
+                                        radius: height / 20,
+                                        child: ClipOval(
+                                          child: Image.asset(
+                                            avaterImage[index],
+                                          ),
                                         ),
                                       ),
-                                    ))
-                              ]),
+                                      Positioned(
+                                        left: 0,
+                                        right: 0,
+                                        bottom: -10,
+                                        child: Container(
+                                          color: Colors.white,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              const Text(
+                                                "Wade Warren",
+                                                style: TextStyle(fontSize: 13),
+                                              ),
+                                              const Text(
+                                                "Beautician",
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 5),
+                                                child: Container(
+                                                  width: width / 7,
+                                                  height: height / 30,
+                                                  decoration: BoxDecoration(
+                                                      color:
+                                                          const Color.fromARGB(
+                                                              20,
+                                                              130,
+                                                              123,
+                                                              235),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              40)),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Image.asset(
+                                                        'assets/logo7.png',
+                                                        scale: width / 150,
+                                                      ),
+                                                      const Text(
+                                                        " 4.9",
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w600),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ]),
+                              ),
                             );
                           },
                         ),
